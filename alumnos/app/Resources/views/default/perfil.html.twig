@@ -11,12 +11,16 @@
 				<td>{{ user.nombre }}</td>
 			</tr>
 			<tr>
-				<th>Apellido</th>		
-				<td>{{ user.apellido }}</td>
+				<th>Edad</th>		
+				<td>{{ user.fechaNacimiento |time_diff }}</td>
 			</tr>
 			<tr>
-				<th>Edad</th>		
-				<td>{{ user.edad }}</td>
+				<th>Sexo</th>		
+				<td>{{ user.sexo }}</td>
+			</tr>
+			<tr>
+				<th>Curso</th>		
+				<td>{{ user.curso }}</td>
 			</tr>
 		</tbody>
 		</table>
