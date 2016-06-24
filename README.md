@@ -1,2 +1,2 @@
 # CursoSymfony
-Aplicación completa del Curso de Symfony
+Proyecto Symfony con los conceptos desarrollados en la segunda clase del curso.
