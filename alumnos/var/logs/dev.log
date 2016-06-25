@@ -230,6 +230,7 @@
 [2016-06-12 23:55:39] request.INFO: Matched route "{route}". {"route":"perfil","route_parameters":{"_controller":"AppBundle\\Controller\\DefaultController::perfilAction","_route":"perfil"},"request_uri":"http://localhost/CursoSymfony/alumnos/web/app_dev.php/perfil","method":"GET"} []
 [2016-06-12 23:55:39] security.INFO: Populated the TokenStorage with an anonymous Token. [] []
 [2016-06-12 23:55:40] request.INFO: Matched route "{route}". {"route":"_wdt","route_parameters":{"_controller":"web_profiler.controller.profiler:toolbarAction","token":"53c847","_route":"_wdt"},"request_uri":"http://localhost/CursoSymfony/alumnos/web/app_dev.php/_wdt/53c847","method":"GET"} []
+
 [2016-06-12 23:58:04] request.INFO: Matched route "{route}". {"route":"ayuda","route_parameters":{"_controller":"AppBundle\\Controller\\DefaultController::ayudaAction","_route":"ayuda"},"request_uri":"http://localhost/CursoSymfony/alumnos/web/app_dev.php/ayuda","method":"GET"} []
 [2016-06-12 23:58:04] security.INFO: Populated the TokenStorage with an anonymous Token. [] []
 [2016-06-12 23:58:05] request.INFO: Matched route "{route}". {"route":"_wdt","route_parameters":{"_controller":"web_profiler.controller.profiler:toolbarAction","token":"9bce71","_route":"_wdt"},"request_uri":"http://localhost/CursoSymfony/alumnos/web/app_dev.php/_wdt/9bce71","method":"GET"} []

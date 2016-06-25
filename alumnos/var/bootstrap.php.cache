@@ -2246,6 +2246,7 @@ protected $booted = false;
 protected $name;
 protected $startTime;
 protected $loadClassCache;
+
 const VERSION ='3.1.1';
 const VERSION_ID = 30101;
 const MAJOR_VERSION = 3;

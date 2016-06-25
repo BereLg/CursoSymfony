@@ -357,6 +357,7 @@
         },
         {
             "name": "doctrine/doctrine-bundle",
+<<<<<<< HEAD
             "version": "1.6.3",
             "source": {
                 "type": "git",
@@ -367,6 +368,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/fd51907c6c76acaa8a5234822a4f901c1500afc1",
                 "reference": "fd51907c6c76acaa8a5234822a4f901c1500afc1",
+=======
+            "version": "1.6.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/DoctrineBundle.git",
+                "reference": "e9c2ccf573b59b7cea566390f34254fed3c20ed9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/e9c2ccf573b59b7cea566390f34254fed3c20ed9",
+                "reference": "e9c2ccf573b59b7cea566390f34254fed3c20ed9",
+>>>>>>> ff13010ce49a002281241754a8615ae8eb1a7bc5
                 "shasum": ""
             },
             "require": {
@@ -383,14 +396,21 @@
                 "phpunit/phpunit": "~4",
                 "satooshi/php-coveralls": "~0.6.1",
                 "symfony/phpunit-bridge": "~2.7|~3.0",
+<<<<<<< HEAD
                 "symfony/property-info": "~2.8|~3.0",
+=======
+>>>>>>> ff13010ce49a002281241754a8615ae8eb1a7bc5
                 "symfony/validator": "~2.2|~3.0",
                 "symfony/yaml": "~2.2|~3.0",
                 "twig/twig": "~1.10"
             },
             "suggest": {
                 "doctrine/orm": "The Doctrine ORM integration is optional in the bundle.",
+<<<<<<< HEAD
                 "symfony/web-profiler-bundle": "To use the data collector."
+=======
+                "symfony/web-profiler-bundle": "to use the data collector"
+>>>>>>> ff13010ce49a002281241754a8615ae8eb1a7bc5
             },
             "type": "symfony-bundle",
             "extra": {
@@ -433,7 +453,11 @@
                 "orm",
                 "persistence"
             ],
+<<<<<<< HEAD
             "time": "2016-04-21 19:55:56"
+=======
+            "time": "2016-01-10 17:21:44"
+>>>>>>> ff13010ce49a002281241754a8615ae8eb1a7bc5
         },
         {
             "name": "doctrine/doctrine-cache-bundle",
@@ -775,6 +799,7 @@
             "time": "2016-01-05 21:34:58"
         },
         {
+<<<<<<< HEAD
             "name": "friendsofsymfony/user-bundle",
             "version": "dev-master",
             "source": {
@@ -844,6 +869,8 @@
             "time": "2016-06-21 10:34:42"
         },
         {
+=======
+>>>>>>> ff13010ce49a002281241754a8615ae8eb1a7bc5
             "name": "incenteev/composer-parameter-handler",
             "version": "v2.1.2",
             "source": {
@@ -945,6 +972,7 @@
             "time": "2014-01-12 16:20:24"
         },
         {
+<<<<<<< HEAD
             "name": "kriswallsmith/assetic",
             "version": "v1.3.2",
             "source": {
@@ -1022,6 +1050,8 @@
             "time": "2015-11-12 13:51:40"
         },
         {
+=======
+>>>>>>> ff13010ce49a002281241754a8615ae8eb1a7bc5
             "name": "monolog/monolog",
             "version": "1.19.0",
             "source": {
@@ -1233,6 +1263,7 @@
         },
         {
             "name": "sensio/distribution-bundle",
+<<<<<<< HEAD
             "version": "v5.0.7",
             "source": {
                 "type": "git",
@@ -1243,6 +1274,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/a9c4723cbdbc6cf7fbfdfde3c639cb1943f0293a",
                 "reference": "a9c4723cbdbc6cf7fbfdfde3c639cb1943f0293a",
+=======
+            "version": "v5.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sensiolabs/SensioDistributionBundle.git",
+                "reference": "ffe306d09c1f2bad721237f63b2169d1b78253d0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/ffe306d09c1f2bad721237f63b2169d1b78253d0",
+                "reference": "ffe306d09c1f2bad721237f63b2169d1b78253d0",
+>>>>>>> ff13010ce49a002281241754a8615ae8eb1a7bc5
                 "shasum": ""
             },
             "require": {
@@ -1281,7 +1324,11 @@
                 "configuration",
                 "distribution"
             ],
+<<<<<<< HEAD
             "time": "2016-06-23 16:11:33"
+=======
+            "time": "2016-04-25 20:50:31"
+>>>>>>> ff13010ce49a002281241754a8615ae8eb1a7bc5
         },
         {
             "name": "sensio/framework-extra-bundle",
@@ -1443,6 +1490,7 @@
             "time": "2016-05-01 08:45:47"
         },
         {
+<<<<<<< HEAD
             "name": "symfony/assetic-bundle",
             "version": "v2.8.0",
             "source": {
@@ -1513,6 +1561,8 @@
             "time": "2015-12-28 13:12:39"
         },
         {
+=======
+>>>>>>> ff13010ce49a002281241754a8615ae8eb1a7bc5
             "name": "symfony/monolog-bundle",
             "version": "2.11.1",
             "source": {
@@ -1968,6 +2018,7 @@
         },
         {
             "name": "symfony/symfony",
+<<<<<<< HEAD
             "version": "v3.1.1",
             "source": {
                 "type": "git",
@@ -1978,6 +2029,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/symfony/zipball/6e1b1497276f8477e9d89b1b6398cf7c7dcebd7d",
                 "reference": "6e1b1497276f8477e9d89b1b6398cf7c7dcebd7d",
+=======
+            "version": "v3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/symfony.git",
+                "reference": "e71d4713c506686e6cf027af44c97ee5d94c7db4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/e71d4713c506686e6cf027af44c97ee5d94c7db4",
+                "reference": "e71d4713c506686e6cf027af44c97ee5d94c7db4",
+>>>>>>> ff13010ce49a002281241754a8615ae8eb1a7bc5
                 "shasum": ""
             },
             "require": {
@@ -2099,6 +2162,7 @@
             "keywords": [
                 "framework"
             ],
+<<<<<<< HEAD
             "time": "2016-06-15 05:59:11"
         },
         {
@@ -2165,6 +2229,22 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/twigphp/Twig/zipball/3566d311a92aae4deec6e48682dc5a4528c4a512",
                 "reference": "3566d311a92aae4deec6e48682dc5a4528c4a512",
+=======
+            "time": "2016-05-30 07:24:54"
+        },
+        {
+            "name": "twig/twig",
+            "version": "v1.24.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twigphp/Twig.git",
+                "reference": "3e5aa30ebfbafd5951fb1b01e338e1800ce7e0e8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/3e5aa30ebfbafd5951fb1b01e338e1800ce7e0e8",
+                "reference": "3e5aa30ebfbafd5951fb1b01e338e1800ce7e0e8",
+>>>>>>> ff13010ce49a002281241754a8615ae8eb1a7bc5
                 "shasum": ""
             },
             "require": {
@@ -2212,12 +2292,17 @@
             "keywords": [
                 "templating"
             ],
+<<<<<<< HEAD
             "time": "2016-05-30 09:11:59"
+=======
+            "time": "2016-01-25 21:22:18"
+>>>>>>> ff13010ce49a002281241754a8615ae8eb1a7bc5
         }
     ],
     "packages-dev": [
         {
             "name": "sensio/generator-bundle",
+<<<<<<< HEAD
             "version": "v3.0.7",
             "source": {
                 "type": "git",
@@ -2228,6 +2313,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/d1be460925376703a470a3ac6ec034eb7eab3892",
                 "reference": "d1be460925376703a470a3ac6ec034eb7eab3892",
+=======
+            "version": "v3.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sensiolabs/SensioGeneratorBundle.git",
+                "reference": "ac91535054d025937d897d78ebb5fc2da5e955a4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/ac91535054d025937d897d78ebb5fc2da5e955a4",
+                "reference": "ac91535054d025937d897d78ebb5fc2da5e955a4",
+>>>>>>> ff13010ce49a002281241754a8615ae8eb1a7bc5
                 "shasum": ""
             },
             "require": {
@@ -2266,11 +2363,19 @@
                 }
             ],
             "description": "This bundle generates code for you",
+<<<<<<< HEAD
             "time": "2016-06-20 05:58:05"
         },
         {
             "name": "symfony/phpunit-bridge",
             "version": "v3.1.1",
+=======
+            "time": "2016-02-26 04:36:01"
+        },
+        {
+            "name": "symfony/phpunit-bridge",
+            "version": "v3.1.0",
+>>>>>>> ff13010ce49a002281241754a8615ae8eb1a7bc5
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/phpunit-bridge.git",
@@ -2326,13 +2431,24 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
+<<<<<<< HEAD
     "stability-flags": {
         "friendsofsymfony/user-bundle": 20
     },
+=======
+    "stability-flags": [],
+>>>>>>> ff13010ce49a002281241754a8615ae8eb1a7bc5
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.5.9"
     },
+<<<<<<< HEAD
     "platform-dev": []
+=======
+    "platform-dev": [],
+    "platform-overrides": {
+        "php": "5.5.9"
+    }
+>>>>>>> ff13010ce49a002281241754a8615ae8eb1a7bc5
 }
