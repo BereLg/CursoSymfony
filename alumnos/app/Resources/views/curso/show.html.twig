@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+{% block title %}Curso{% endblock %}
+{% block body %}
+	<div class="titulo">{{ block('title') }}</div>
+	<div class="tabla">
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+				<th>Año</th>
+				<th>División</th>
+				<th>Ciclo</th>
+				<th>Alumnos</th>
+            </tr>
+            <tr>
+                <td>{{ curso.id }}</td>
+                <td>{{ curso.anio }}</td>
+                <td>{{ curso.division }}</td>
+				<td>{{ curso.ciclo }}</td>
+				{% for alumno in curso.alumnos %}
+                <td>{{ alumno.nombre }}</td>
+				{% else %}
+				<td>Curso sin alumnos</td>
+				{% endfor %}
+            </tr>
+        </tbody>
+    </table>
+	</div>
+    <ul>
+        <li>
+            <a href="{{ path('curso_index') }}">Volver</a>
+        </li>
+        <li>
+            <a href="{{ path('curso_edit', { 'id': curso.id }) }}">Editar</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Borrar">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

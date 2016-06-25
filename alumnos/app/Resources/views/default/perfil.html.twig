@@ -1,0 +1,28 @@
+{% extends 'base.html.twig'%}
+{% block title %}Perfil{% endblock %}
+{% block body %}
+	<div class="titulo">{{user.nombre}} | Mi {{ block('title') }}</div>
+	<br/>
+	<div class="tabla">
+		<table>
+		<tbody>
+			<tr>
+				<th>Nombre</th>		
+				<td>{{ user.nombre }}</td>
+			</tr>
+			<tr>
+				<th>Edad</th>		
+				<td>{{ user.edad }}</td>
+			</tr>
+			<tr>
+				<th>Sexo</th>		
+				<td>{{ user.sexo }}</td>
+			</tr>
+			<tr>
+				<th>Curso</th>		
+				<td>{{ user.curso }}</td>
+			</tr>
+		</tbody>
+		</table>
+	</div>
+{% endblock %}

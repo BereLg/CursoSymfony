@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>{% block title %}{% endblock %} | Alumnos</title>
+		{% block stylesheets %}{% endblock %}
+		<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+		<link type="text/css" rel="stylesheet" href="{{ asset('css/estilos.css') }}"  media="screen,projection"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
+	<body>
+		<header class="logo">
+			<div class="center">Gestión de Alumnos</div>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="{{ path('ayuda') }}">Ayuda</a></li>
+				<li><a href="{{ path('perfil') }}">Mi perfil</a></li>
+				<li><a href="{{ path('curso_index') }}">Cursos</a></li>
+				<li><a href="{{ path('alumno_index') }}">Alumnos</a></li>
+			</ul>				
+		</nav>
+		<br/>
+		{% block body %}{% endblock %}
+		{% block javascripts %}{% endblock %}
+	</body>
+</html>
