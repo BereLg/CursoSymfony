@@ -22,6 +22,12 @@ class Alumno extends Usuario
 	
 	/**
      * 
+     * @ORM\Column(name="dni", type="string", length=8, unique=true)
+     */
+	private $dni;
+	
+	/**
+     * 
      * @ORM\Column(name="sexo", type="string", length=1)
      */
 	private $sexo;
@@ -51,6 +57,30 @@ class Alumno extends Usuario
     }
 	
 	/**
+     * Set dni
+     *
+     * @param string $dni
+     *
+     * @return Usuario
+     */
+    public function setDni($dni)
+    {
+        $this->dni = $dni;
+
+        return $this;
+    }
+
+    /**
+     * Get dni
+     *
+     * @return string
+     */
+    public function getDni()
+    {
+        return $this->dni;
+    }
+	
+	/**
      * Set sexo
      *
      * @param string $sexo
@@ -74,8 +104,9 @@ class Alumno extends Usuario
         return $this->sexo;
     }
 	
-	public function __construct($nombre=null,$fechaNacimiento=null,$sexo=null,$curso=null){
+	public function __construct($dni=null, $nombre=null, $fechaNacimiento=null, $sexo=null, $curso=null){
 		parent::__construct($nombre,$fechaNacimiento);
+		$this->setDni($dni);
 		$this->setCurso($curso);
 		$this->setSexo($sexo);
 	}

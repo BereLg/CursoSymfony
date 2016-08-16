@@ -1,5 +1,5 @@
 <?php
-
+//Este script fue generado automaticamente con el comando php bin/console doctrine:generate:crud
 namespace AppBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
@@ -8,6 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AppBundle\Entity\Alumno;
 use AppBundle\Form\AlumnoType;
+use AppBundle\Entity\Curso;
 
 /**
  * Alumno controller.
@@ -41,15 +42,30 @@ class AlumnoController extends Controller
      */
     public function newAction(Request $request)
     {
+		//Este metodo fue modificado para que cree un usuario al alumno
         $alumno = new Alumno();
         $form = $this->createForm('AppBundle\Form\AlumnoType', $alumno);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($alumno);
-            $em->flush();
-
+			/*Aqui se setean valores necesarios para generar el usuario.
+			Esto se hace para no tener que ingresar estos datos tambien en el formulario, sino 
+			que se realice automaticamente cada vez que se crea un alumno
+			*/
+			//Se establece como nombre de usuario el DNI del alumno (como sucede en el SIU)
+			$alumno->setUsername($alumno->getDni());
+			//La contraseña tambien sera el DNI. Se llama al metodo contrasña plana porque luego se codificara
+			//con el metodo de encriptacion elegido en el archivo app/security.yml
+			$alumno->setPlainPassword($alumno->getDni());
+			//Se establece que la cuenta estara habilitada
+			$alumno->setEnabled(true);
+			//Se aclara que el rol es ROLE_ALUMNO; sus permisos estan limitados
+			$alumno->addRole('ROLE_ALUMNO');
+			//Se accede al servicio 'fos_user.user_manager', encargado de crear usuarios de FOSUserBundle
+			//y se lo apunta con $userManager
+			$userManager = $this->get('fos_user.user_manager');
+			//Se actualiza el alumno. Esto crea un usuario alumno con todos sus atributos, y codifica la contraseña entre otras cosas
+			//El parametro true se pasa para que guarde los datos en la base de datos
+			$userManager->updateUser($alumno,true);
             return $this->redirectToRoute('alumno_show', array('id' => $alumno->getId()));
         }
 
@@ -88,16 +104,18 @@ class AlumnoController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($alumno);
-            $em->flush();
+			//Como todos los datos ya estan en el alumno, simplemente se actualiza
+			//con el servicio
+			$userManager = $this->get('fos_user.user_manager');
+			$userManager->updateUser($alumno,true);
 
-            return $this->redirectToRoute('alumno_edit', array('id' => $alumno->getId()));
+
+            return $this->redirectToRoute('alumno_show', array('id' => $alumno->getId()));
         }
 
         return $this->render('alumno/edit.html.twig', array(
             'alumno' => $alumno,
-            'edit_form' => $editForm->createView(),
+            'form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
@@ -136,5 +154,18 @@ class AlumnoController extends Controller
             ->setMethod('DELETE')
             ->getForm()
         ;
+    }
+	
+	/**
+     * Muestra el curso del usuario (en caso de que el usuario sea un alumno)
+     *
+     * @Route("/curso/{id}", name="alumno_curso_show")
+     * @Method("GET")
+     */
+    public function showCursoAction(Curso $curso)
+    {	
+        return $this->render('curso/showAlumno.html.twig', array(
+            'curso' => $curso,
+        ));
     }
 }

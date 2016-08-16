@@ -6,12 +6,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use AppBundle\Entity\Curso;
 use AppBundle\Form\CursoType;
 
 /**
  * Curso controller.
- *
+ * @Security("has_role('ROLE_ADMIN')")
  * @Route("/curso")
  */
 class CursoController extends Controller
@@ -68,7 +69,7 @@ class CursoController extends Controller
     public function showAction(Curso $curso)
     {
         $deleteForm = $this->createDeleteForm($curso);
-
+		
         return $this->render('curso/show.html.twig', array(
             'curso' => $curso,
             'delete_form' => $deleteForm->createView(),

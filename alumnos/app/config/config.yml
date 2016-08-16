@@ -10,7 +10,7 @@ parameters:
 
 framework:
     #esi:             ~
-    #translator:      { fallbacks: ["%locale%"] }
+    translator:      { fallbacks: ["%locale%"] }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -67,7 +67,7 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
-#fos_user:
-#    db_driver: orm
-#    firewall_name: main
-#    user_class: AppBundle\Entity\Usuario
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: AppBundle\Entity\Usuario

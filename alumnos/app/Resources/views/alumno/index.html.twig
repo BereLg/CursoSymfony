@@ -7,7 +7,7 @@
     <table>
         <thead>
             <tr>
-                <th>Id</th>
+                <th>DNI</th>
 				<th>Sexo</th>
                 <th>Nombre</th>
                 <th>Fecha de nacimiento</th>
@@ -17,7 +17,7 @@
         <tbody>
         {% for alumno in alumnos %}
             <tr>
-                <td><a href="{{ path('alumno_show', { 'id': alumno.id }) }}">{{ alumno.id }}</a></td>
+                <td><a href="{{ path('alumno_show', { 'id': alumno.id }) }}">{{ alumno.dni }}</a></td>
                 <td>{{ alumno.sexo }}</td>
                 <td>{{ alumno.nombre }}</td>
                 <td>{% if alumno.fechaNacimiento %}{{ alumno.fechaNacimiento|date('Y-m-d') }}{% endif %}</td>

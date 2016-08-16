@@ -31,7 +31,7 @@ class Curso
 
     /**
      * @var string
-     *
+     * 
      * @ORM\Column(name="division", type="string", length=10)
      */
     private $division;

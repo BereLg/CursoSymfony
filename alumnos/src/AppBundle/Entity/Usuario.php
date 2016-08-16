@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\DiscriminatorMap({"usuario" = "Usuario", "alumno" = "Alumno"})
  * 
  */
-class Usuario //extends BaseUser @ORM\Table(name="usuario")
+class Usuario extends BaseUser //@ORM\Table(name="usuario")
 {
     /**
      * @ORM\Id
@@ -23,19 +23,19 @@ class Usuario //extends BaseUser @ORM\Table(name="usuario")
 
     /**
      * 
-     * @ORM\Column(name="nombre", type="string", length=50)
+     * @ORM\Column(name="nombre", type="string", length=50,nullable=true)
      */
 	protected $nombre;
 	
 	/**
      * 
-     * @ORM\Column(name="fecha_nacimiento", type="date")
+     * @ORM\Column(name="fecha_nacimiento", type="date",nullable=true)
      */
 	protected $fechaNacimiento;
 	
-	public function __construct($nombre=null,$fechaNacimiento=null)
+	public function __construct($nombre="usuario",$fechaNacimiento=null)
     {
-        //parent::__construct();
+        parent::__construct();
 		$this->setNombre($nombre);
 		$this->setFechaNacimiento($fechaNacimiento);
     }
@@ -97,5 +97,9 @@ class Usuario //extends BaseUser @ORM\Table(name="usuario")
 		$hoy = new \DateTime('NOW');
 		$diff = $hoy->diff($this->getFechaNacimiento());
 		return $diff->format('%y años');
+	}
+	
+	public function clase(){
+		return get_class($this);
 	}
 }

@@ -13,14 +13,20 @@
 			<div class="center">Gestión de Alumnos</div>
 		</header>
 		<nav>
-			<ul>
-				<li><a href="{{ path('ayuda') }}">Ayuda</a></li>
-				<li><a href="{{ path('perfil') }}">Mi perfil</a></li>
-
-				<li><a href="#{# { path('curso_index') } #}">Cursos</a></li>
-				<li><a href="#{# { path('alumno_index') } #}">Alumnos</a></li>
-
-			</ul>				
+		<ul>
+			{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+			<li><a href="{{ path('ayuda') }}">Ayuda</a></li>
+			<li><a href="{{ path('perfil') }}">Mi perfil</a></li>
+			{% if is_granted("ROLE_ADMIN") %}
+			<li><a href="{{ path('curso_index') }}">Cursos</a></li>
+			<li><a href="{{ path('alumno_index') }}">Alumnos</a></li>
+			{% endif %}
+            <li>{{ ''|trans({'%username%': app.user.username}, 'FOSUserBundle') }}</li>
+			<li><a href="{{ path('fos_user_security_logout') }}">{{ 'Logout'|trans({}, 'FOSUserBundle') }}</a></li>
+			{% else %}
+            <li><a href="{{ path('fos_user_security_login') }}">{{ 'Login'|trans({}, 'FOSUserBundle') }}</a></li>
+			{% endif %}
+			</ul>
 		</nav>
 		<br/>
 		{% block body %}{% endblock %}

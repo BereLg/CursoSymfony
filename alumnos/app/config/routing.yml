@@ -6,3 +6,5 @@ ayuda:
     defaults:
         _controller: FrameworkBundle:Template:template
         template:    default/ayuda.html.twig
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

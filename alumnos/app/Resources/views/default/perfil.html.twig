@@ -1,27 +1,30 @@
 {% extends 'base.html.twig'%}
 {% block title %}Perfil{% endblock %}
 {% block body %}
-	<div class="titulo">{{user.nombre}} | Mi {{ block('title') }}</div>
+	<div class="titulo">Mi {{ block('title')}} | <a href="{{ path('perfil_edit', { 'id': app.user.id })}}">Editar</a></div>
 	<br/>
+	</div>
 	<div class="tabla">
 		<table>
 		<tbody>
 			<tr>
 				<th>Nombre</th>		
-				<td>{{ user.nombre }}</td>
+				<td>{{ app.user.nombre }}</td>
 			</tr>
 			<tr>
-				<th>Edad</th>		
-				<td>{{ user.edad }}</td>
+				<th>Email</th>		
+				<td>{{ app.user.email }}</td>
 			</tr>
 			<tr>
-				<th>Sexo</th>		
-				<td>{{ user.sexo }}</td>
+				<th>Fecha de nacimiento</th>		
+				<td>{{ app.user.fechaNacimiento ? app.user.fechaNacimiento | date : 'Sin datos'}}</td>
 			</tr>
+			{% if 'Alumno' in app.user.clase %}
 			<tr>
 				<th>Curso</th>		
-				<td>{{ user.curso }}</td>
+				<td><a href="{{ path('alumno_curso_show', { 'id': app.user.curso.id }) }}">{{app.user.curso}}</a></td>
 			</tr>
+			{% endif %}
 		</tbody>
 		</table>
 	</div>
